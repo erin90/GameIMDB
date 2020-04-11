@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php include ("connect.php");
+
+$query = "SELECT * FROM game";
+
+$query = mysqli_query($dbcon, $query);
+
+?>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Erin Yabut">
+
+    <title>GameDB</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="sources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link href="sources/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div id="header" class="container">
+        <a class="navbar-brand" href="#">GameDB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/GameIMDB">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div id="main-container" class="container">
+      <div class="row">
+       
+
+            <?php
+             foreach($query as $game){
+            ?>
+            <div class="col-sm">
+                <div class="card">
+                  <a href="view.php?game_id=<?php echo "$game[id]" ?>"><img class="card-img-top" src="<?php echo "$game[image]"?>"></a>
+                </div>
+            </div>
+            <?php
+             }
+            ?>
+         
+        <!-- <div class="col-sm">
+          <div class="card">
+             <a href="/GameIMDB/game/Spiderman.html"><img class="card-img-top" src="sources/img/Spiderman.jpg" alt="Spiderman"></a>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+             <a href="/GameIMDB/game/injustice.html"><img class="card-img-top" src="sources/img/injustice.jpg" alt="Injustice"></a>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+             <a href="/GameIMDB/game/Fifa.html"><img class="card-img-top" src="sources/img/fifa1.jpg" alt="Fifa 18"></a>
+          </div>
+        </div> -->
+      </div>
+      <!-- <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <a href="/GameIMDB/game/Gods of War.html"><img class="card-img-top" src="sources/img/gow.jpg" alt="God of War"></a>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+             <a href="/GameIMDB/game/Assassins.html"><img class="card-img-top" src="sources/img/ac.jpg" alt="Assassins Creed Odyssey"></a>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+             <a href="/GameIMDB/game/CoD.html"><img class="card-img-top" src="sources/img/cod.jpg" alt="Call of Duty:WW2"></a>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card">
+             <a href="/GameIMDB/game/Uncharted.html"><img class="card-img-top" src="sources/img/u.jpg" alt="Uncharted"></a>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,1 @@
+This is my first project as an IT Skills and Training officer. I worked with the HTML while Gene worked on the php side of it. This is the webpage that was used for the HTML/CSS/PHP training last year. I used HTML and CSS here.

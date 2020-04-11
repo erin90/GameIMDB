@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oxygen:300,400');
+
+body {
+	margin: 5px 0px 5px 0px;
+	background-color: #E3E2DD;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12pt;
+}
+#main-container {
+	margin-top: 50px;
+}
+.card{
+	height: 314px;
+	width: 250px;
+	box-sizing: border-box;
+    box-shadow: 0 0 5px #333;
+    margin-bottom: 40px;
+}
+.card-img-top{
+	height: 312px;
+}
+
+.card:hover {
+    filter: brightness(.5);
+}
